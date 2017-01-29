@@ -14,13 +14,15 @@
 <table>
   <tr>
     <th> <%= f.label :text %></td>
-    <th> "Previous question number"</th>
-    <th>"Next question number"</th>
+    <th>Previous question number</th>
+    <th>Next question number</th>
+    <th>Answers</th>
   </tr>
   <tr>
     <td><%= f.text_area :text %></td>
-    <td><%= f.prev %></td>
-    <td><%= f.next %></td>
+    <td><%= f.collection_select(:prev, Question.all, :id, :text) %></td>
+    <td><%= f.collection_select(:next, Question.all, :id, :text) %></td>
+    <td><%= f.collection_select(:answers, Answer.all, :id, :text) %></td>
   </tr>
 </table>
 
