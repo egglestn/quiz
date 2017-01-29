@@ -11,10 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :text %>
-    <%= f.text_field :text %>
-  </div>
+<table>
+  <tr>
+    <th> <%= f.label :text %></td>
+    <th> "Previous question number"</th>
+    <th>"Next question number"</th>
+  </tr>
+  <tr>
+    <td><%= f.text_area :text %></td>
+    <td><%= f.prev %></td>
+    <td><%= f.next %></td>
+  </tr>
+</table>
 
   <div class="field">
     <%= f.label :answers_id %>

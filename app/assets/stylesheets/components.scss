@@ -16,11 +16,11 @@ input[type="submit"], .primary {
   background-color: $brand-primary;
 }
 
-input[type="text"] {
-  border-radius: 3px;
+input, textarea {
+  border-radius: 5px;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
 }
 
@@ -31,4 +31,31 @@ label {
 h1 {
   padding: 10px;
   color: $brand-high-contrast;
+}
+
+table {
+  background-color: $brand-white;
+
+  thead {
+   border-color: $brand-contrast;
+   border-top-style: solid;
+   border-top-width: 1px;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+   text-align: left;
+  }
+
+  th {
+    color: $brand-primary;
+    padding: 5px;
+  }
+
+  td {
+    color: $brand-primary;
+    padding: 5px;
+  }
+
+  a {
+    background-color: $brand-white;
+  }
 }

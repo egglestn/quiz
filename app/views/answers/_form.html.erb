@@ -11,16 +11,12 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :text %>
-      <br>
-      <%= f.text_field :text %>
+    <div>
+      <%= f.text_area :text, placeholder: "Answer text" %>
     </div>
 
-    <div class="field">
-      <%= f.label :score %>
-      <br>
-      <%= f.number_field :score %>
+    <div>
+      <%= f.number_field :score, min: 0, max: 10, value: 5 %>
     </div>
 
     <div class="actions">
