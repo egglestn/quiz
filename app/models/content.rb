@@ -7,4 +7,10 @@ class Content < ApplicationRecord
     :answer,
     :explanation
   ]
+
+  enum section: [
+    :world_without_maths,
+    :number_system,
+    :geometry
+  ]
 end

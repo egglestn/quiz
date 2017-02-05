@@ -18,31 +18,25 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
 
-    respond_to do
-      if @content.save
-        redirect_to @content, notice: 'Content was successfully created.'
-      else
-        render :new
-      end
+    if @content.save
+      redirect_to @content, notice: 'Content was successfully created.'
+    else
+      render :new
     end
   end
 
 
   def update
-    respond_to do
-      if @content.update(content_params)
-        redirect_to @content, notice: 'Content was successfully updated.'
-      else
-        render :edit
-      end
-    end
+  if @content.update(content_params)
+    redirect_to @content, notice: 'Content was successfully updated.'
+  else
+    render :edit
+  end
   end
 
   def destroy
     @content.destroy
-    respond_to do
-      redirect_to contents_url, notice: 'Content was successfully destroyed.'
-    end
+    redirect_to contents_url, notice: 'Content was successfully destroyed.'
   end
 
   private

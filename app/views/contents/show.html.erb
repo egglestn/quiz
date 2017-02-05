@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+<div class="header">
+  <h2><%= @content.section.titleize %></h2>
+</div>
+
+<div class="section content">
+  <span><%= @content.category.titleize %> <%= @content.id %></span><br>
+  <span><%= @content.key %></span><br>
+  <span><%= @content.text %></span><br>
+  <span><%= @content.score %></span>
+</div>
+
+<div class="actions">
+  <%= link_to 'Edit', edit_content_path(@content), class: "left" %>
+  <%= link_to 'Back', contents_path, class: "right" %>
+</div>

@@ -13,20 +13,25 @@
 
   <div class="content">
     <div class="left">
-        <div class="category">
-          <%= label_tag :category %>
-          <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}) %>
-        </div>
+      <div class="category">
+        <%= label_tag :category %>
+        <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}) %>
+      </div>
 
-        <div class="next">
-          <%= label_tag :next %>
-          <%= f.collection_select(:content, Content.all, :id, :text) %>
-        </div>
+      <div class="next">
+        <%= label_tag :next %>
+        <%= f.collection_select(:content, Content.all, :id, :key) %>
+      </div>
 
-        <div class="score">
-          <%= label_tag :score %>
-          <%= f.number_field :score, min: 0, max: 10, value: 5 %>
-        </div>
+      <div class="topic">
+        <%= label_tag :section %>
+        <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
+      </div>
+
+      <div class="score">
+        <%= label_tag :score %>
+        <%= f.number_field :score, min: 0, max: 10, value: 5 %>
+      </div>
     </div>
 
     <div class="right">
@@ -44,7 +49,7 @@
   </div>
 
   <div class="actions">
-    <%= link_to 'Back', contents_path %>
-    <%= f.submit %>
+    <%= link_to 'Back', contents_path, class: "left" %>
+    <%= f.submit "Submit", class: "right" %>
   </div>
 <% end %>

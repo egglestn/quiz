@@ -30,12 +30,12 @@ label {
   margin-top: 20px;
 }
 
-h1 {
+h1, h2 {
   padding: 10px;
   color: $brand-high-contrast;
 }
 
-/*table {
+table {
   background-color: $brand-white;
 
   thead {
@@ -60,4 +60,4 @@ h1 {
   a {
     background-color: $brand-white;
   }
-}*/
+}

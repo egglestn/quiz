@@ -2,7 +2,7 @@
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 190px;
+  min-height: 240px;
 
   .left {
     width: 50%;
@@ -12,5 +12,10 @@
   .right {
     width: 50%;
     float: right;
+  }
+
+  textarea {
+    width: 290px;
+    height: 80px;
   }
 }
