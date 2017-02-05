@@ -37,6 +37,10 @@ h1, h2 {
 
 table {
   background-color: $brand-white;
+  width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  table-spacing: 6px;
 
   thead {
    border-color: $brand-contrast;
