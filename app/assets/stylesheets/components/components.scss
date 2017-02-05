@@ -26,6 +26,8 @@ input:focus, textarea:focus {
 
 label {
   color: $brand-primary;
+  display: block;
+  margin-top: 20px;
 }
 
 h1 {
@@ -33,7 +35,7 @@ h1 {
   color: $brand-high-contrast;
 }
 
-table {
+/*table {
   background-color: $brand-white;
 
   thead {
@@ -58,4 +60,4 @@ table {
   a {
     background-color: $brand-white;
   }
-}
+}*/

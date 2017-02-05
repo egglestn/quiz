@@ -1,0 +1,50 @@
+<%= form_for(content) do |f| %>
+  <% if content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="content">
+    <div class="left">
+        <div class="category">
+          <%= label_tag :category %>
+          <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}) %>
+        </div>
+
+        <div class="next">
+          <%= label_tag :next %>
+          <%= f.collection_select(:content, Content.all, :id, :text) %>
+        </div>
+
+        <div class="score">
+          <%= label_tag :score %>
+          <%= f.number_field :score, min: 0, max: 10, value: 5 %>
+        </div>
+    </div>
+
+    <div class="right">
+      <div class="key">
+        <%= label_tag :key %>
+        <%= f.text_field :key, placeholder: "Key text" %>
+      </div>
+
+      <div class="text">
+        <%= label_tag :text %>
+        <%= f.text_area :text, placeholder: "Question, answer or explanation text" %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Back', contents_path %>
+    <%= f.submit %>
+  </div>
+<% end %>

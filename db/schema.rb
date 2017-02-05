@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129153424) do
+ActiveRecord::Schema.define(version: 20170205114150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20170129153424) do
     t.integer  "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string   "text"
+    t.string   "key"
+    t.integer  "section"
+    t.integer  "content_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "score"
+    t.integer  "category"
+    t.index ["content_id"], name: "index_contents_on_content_id", using: :btree
   end
 
   create_table "questions", force: :cascade do |t|
@@ -50,5 +62,6 @@ ActiveRecord::Schema.define(version: 20170129153424) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "contents", "contents"
   add_foreign_key "questions", "answers", column: "answers_id"
 end
