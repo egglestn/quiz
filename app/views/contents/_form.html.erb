@@ -20,7 +20,7 @@
 
       <div class="next">
         <%= label_tag :next %>
-        <%= f.collection_select(:content, Content.all, :id, :key) %>
+        <%= f.collection_select(:content_id, Content.all, :id, :key) %>
       </div>
 
       <div class="topic">

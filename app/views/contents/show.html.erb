@@ -5,10 +5,12 @@
 </div>
 
 <div class="section content">
-  <span><%= @content.category.titleize %> <%= @content.id %></span><br>
-  <span><%= @content.key %></span><br>
-  <span><%= @content.text %></span><br>
-  <span><%= @content.score %></span>
+  <label><%= @content.category.titleize %>
+  <%= @content.id %></label>
+  <label><%= @content.key %></label>
+  <span><%= @content.text %></span>
+  <label>Score</label><span> <%= @content.score %></span>
+  <label>Next</label><span> <%= @content.content %></span>
 </div>
 
 <div class="actions">

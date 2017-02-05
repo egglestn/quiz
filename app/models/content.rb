@@ -13,4 +13,8 @@ class Content < ApplicationRecord
     :number_system,
     :geometry
   ]
+
+  def to_s
+    key
+  end
 end
