@@ -9,8 +9,13 @@
   <%= @content.id %></label>
   <label><%= @content.key %></label>
   <span><%= @content.text %></span>
-  <label>Score</label><span> <%= @content.score %></span>
-  <label>Next</label><span> <%= @content.content %></span>
+  <% if @content.category == "question" %>
+    <label>Answer 1</label><span> <%= @content.content %></span>
+    TODO answers
+  <% else %>
+    <label>Score</label><span> <%= @content.score %></span>
+    <label>Next</label><span> <%= @content.content %></span>
+  <% end %>
 </div>
 
 <div class="actions">

@@ -3,8 +3,8 @@ class Content < ApplicationRecord
   has_many :contents
 
   enum category: [
-    :question,
     :answer,
+    :question,
     :explanation
   ]
 

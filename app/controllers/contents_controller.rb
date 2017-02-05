@@ -10,9 +10,11 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
+    @answers = Content.where(category: Content.categories["answer"])
   end
 
   def edit
+    @answers = Content.where(category: Content.categories["answer"])
   end
 
   def create
@@ -51,7 +53,7 @@ class ContentsController < ApplicationController
             :text,
             :key,
             :section,
-            :content_id,
+            :content_ids,
             :score,
             :category
           )
