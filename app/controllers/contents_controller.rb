@@ -3,6 +3,9 @@ class ContentsController < ApplicationController
 
   def index
     @contents = Content.all
+    @answers = Content.where(category: Content.categories["answer"])
+    @questions = Content.where(category: Content.categories["question"])
+    @explanations = Content.where(category: Content.categories["explanation"])
   end
 
   def show
