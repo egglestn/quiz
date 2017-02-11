@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="header">
   <h2><%= @content.section.titleize %></h2>
 </div>
@@ -10,15 +8,15 @@
   <label><%= @content.key %></label>
   <span><%= @content.text %></span>
   <% if @content.category == "question" %>
-    <label>Answer 1</label><span> <%= @content.content %></span>
+    <label><%= t(".answer_one") %></label><span> <%= @content.content %></span>
     TODO answers
   <% else %>
-    <label>Score</label><span> <%= @content.score %></span>
-    <label>Next</label><span> <%= @content.content %></span>
+    <label><%= t(".score") %></label><span> <%= @content.score %></span>
+    <label><%= t(".next") %></label><span> <%= @content.content %></span>
   <% end %>
 </div>
 
 <div class="actions">
-  <%= link_to 'Edit', edit_content_path(@content), class: "left" %>
-  <%= link_to 'Back', contents_path, class: "right" %>
+  <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
+  <%= link_to t("back"), contents_path, class: "right" %>
 </div>

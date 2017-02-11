@@ -2,7 +2,6 @@ class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @contents = Content.all
     @answers = Content.where(category: Content.categories["answer"])
     @questions = Content.where(category: Content.categories["question"])
     @explanations = Content.where(category: Content.categories["explanation"])
@@ -24,7 +23,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
 
     if @content.save
-      redirect_to @content, notice: 'Content was successfully created.'
+      redirect_to @content, notice: t("success.create", name: @content.key)
     else
       render :new
     end
@@ -33,7 +32,7 @@ class ContentsController < ApplicationController
 
   def update
   if @content.update(content_params)
-    redirect_to @content, notice: 'Content was successfully updated.'
+    redirect_to @content, notice: t("success.update", name: @content.key)
   else
     render :edit
   end
@@ -41,7 +40,7 @@ class ContentsController < ApplicationController
 
   def destroy
     @content.destroy
-    redirect_to contents_url, notice: 'Content was successfully destroyed.'
+    redirect_to contents_url, notice: t("success.destroy", name: @content.key)
   end
 
   private

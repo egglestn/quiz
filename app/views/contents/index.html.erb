@@ -1,94 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <div class="header">
-  <h1>Contents</h1>
+  <h1><%= Content.model_name.plural.titleize %></h1>
 </div>
 
-<div class="col-right">
-  <h3>Answers</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Key</th>
-        <th>Next</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
+<div class="section">
+  <div class="col-right">
+    <h3><%= t(".answers") %></h3>
+    <%= render 'table', contents: @answers %>
+  </div>
 
-    <tbody>
-      <% @answers.each do |content| %>
-        <tr>
-          <td><%= content.id %></td>
-          <td><%= link_to content.key, content_path(content) %></td>
-          <td><%= content.content_id %></td>
-          <td>
-            <%= link_to "", edit_content_path(content), class: "fa fa-edit" %>
-            <%= link_to "", content, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+  <div class="col-left">
+    <h3><%= t(".questions") %></h3>
+     <%= render 'table', contents: @questions %>
 
-<div class="col-left">
-  <h3>Questions</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Key</th>
-        <th>Answers</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @questions.each do |content| %>
-        <tr>
-          <td><%= content.id %></td>
-          <td><%= link_to content.key, content_path(content) %></td>
-          <td><%= content.content_id %></td>
-          <td>
-            <%= link_to "", edit_content_path(content), class: "fa fa-edit" %>
-            <%= link_to "", content, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <h3>Explanations</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Key</th>
-        <th>Next</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @explanations.each do |content| %>
-        <tr>
-          <td><%= content.id %></td>
-          <td><%= link_to content.key, content_path(content) %></td>
-          <td><%= content.content_id %></td>
-          <td>
-            <%= link_to "", edit_content_path(content), class: "fa fa-edit" %>
-            <%= link_to "", content, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+    <h3><%= t(".explanations") %></h3>
+    <%= render 'table', contents: @explanations %>
+  </div>
 </div>
 
 <br>
-
 <div class="actions">
-  <%= link_to 'New Content', new_content_path %>
+  <%= link_to t(".new"), new_content_path %>
 </div>
