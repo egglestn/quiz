@@ -12,11 +12,15 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
-    @answers = Content.where(category: Content.categories["answer"])
-  end
+    3.times { @content.relationships.build } unless @content.relationships.length.positive?
+ end
 
   def edit
-    @answers = Content.where(category: Content.categories["answer"])
+    3.times { @content.relationships.build } unless @content.relationships.length.positive?
+    puts "====================="
+    puts "Built relationships"
+    puts @content.relationships.length
+    puts "====================="
   end
 
   def create
@@ -29,9 +33,13 @@ class ContentsController < ApplicationController
     end
   end
 
-
   def update
-  if @content.update(content_params)
+      puts "====================="
+      puts @content
+      puts content_params[:content_ids]
+      puts "====================="
+    if @content.update(content_params)
+
     redirect_to @content, notice: t("success.update", name: @content.key)
   else
     render :edit
@@ -57,7 +65,8 @@ class ContentsController < ApplicationController
             :section,
             :content_ids,
             :score,
-            :category
-          )
+            :category,
+            relationships_attributes: [:to_content]
+         )
     end
 end

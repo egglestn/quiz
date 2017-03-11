@@ -14,22 +14,15 @@ $(document).ready(function() {
        $next.hide();
        $score.hide();
 
-       var $dataDiv = $content.find(".data");
-       var answerContents = $dataDiv.data('contents');
-       var answers = document.createElement("div");
-       answers.className = "answers";
+       var $answersDiv = $content.find(".answers");
+       console.log($answersDiv);
+       $answersDiv.show();
 
-       for (i = 0; i < 3; i++) {
-         answer = createAnswer(i, answerContents);
-         answers.append(answer);
-       }
-
-       $leftContent.append(answers);
     }
     else {
       console.log("Not a question");
-      var $answers = $content.find(".answers");
-      $answers.hide();
+      var $answersDiv = $content.find(".answers");
+      $answersDiv.hide();
 
       $next.show();
       $score.show();

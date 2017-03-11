@@ -6,6 +6,7 @@ TODO:
 * Testing!
 * Post up to heroku
 * Create new content -> make fields more dynamic, next can be blank
+* Delete scaffolds.scss
 
 Done
 * i18n translations

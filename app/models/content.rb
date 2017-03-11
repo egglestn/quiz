@@ -1,6 +1,8 @@
 class Content < ApplicationRecord
-  belongs_to :content, optional: true
-  has_many :contents
+  has_many :relationships, foreign_key: :from_content
+  has_many :contents, through: :relationships
+
+  accepts_nested_attributes_for :relationships
 
   enum category: [
     :answer,

@@ -18,9 +18,13 @@
         <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}) %>
       </div>
 
-      <div class="next">
-        <%= label_tag :next %>
-        <%= f.collection_select(:content_id, Content.all, :id, :key) %>
+      <div class="follows">
+        <%= f.fields_for :relationships do |builder| %>
+          <div class="ans">
+            <%= label_tag :ans %>
+            <%= builder.collection_select(:to_content, Content.all, :id, :key, prompt: true) %>
+          </div>
+        <% end %>
       </div>
 
       <div class="topic">
@@ -28,7 +32,11 @@
         <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
       </div>
 
-      <div class="score">
+      <% if content.category == "question" %>
+        <div class="score">
+      <% else %>
+        <div class="score hidden">
+      <% end %>
         <%= label_tag :score %>
         <%= f.number_field :score, min: 0, max: 10, value: 5 %>
       </div>

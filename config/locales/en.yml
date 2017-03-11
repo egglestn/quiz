@@ -27,6 +27,8 @@ en:
       content_placeholder: "Question, answer or explanation text"
     show:
       answer_one: "Answer 1"
+      answer_two: "Answer 2"
+      answer_three: "Answer 3"
       score: "Score"
       next: "Next"
     new:

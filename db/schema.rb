@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205114150) do
+ActiveRecord::Schema.define(version: 20170219203331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 20170205114150) do
     t.integer  "next"
     t.integer  "section"
     t.index ["answers_id"], name: "index_questions_on_answers_id", using: :btree
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "from_content"
+    t.integer  "to_content"
   end
 
   create_table "users", force: :cascade do |t|
