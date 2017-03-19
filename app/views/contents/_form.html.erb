@@ -20,8 +20,13 @@
 
       <div class="follows">
         <%= f.fields_for :relationships do |builder| %>
-          <div class="ans">
-            <%= label_tag :ans %>
+         <% if content.category == "question" || builder.options[:child_index] == 0 %>
+           <div class="optiondiv">
+           <%= label_tag :option, t(".option") %>
+         <% else %>
+           <div class="optiondiv hidden">
+           <%= label_tag :option, t(".option") %>
+        <% end %>
             <%= builder.collection_select(:to_content, Content.all, :id, :key, prompt: true) %>
           </div>
         <% end %>

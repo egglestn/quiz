@@ -8,6 +8,15 @@
     font-weight: bold;
   }
 
+  textarea {
+    width: 290px;
+    height: 80px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   .left {
     width: 50%;
     float: left;
@@ -16,10 +25,5 @@
   .right {
     width: 50%;
     float: right;
-  }
-
-  textarea {
-    width: 290px;
-    height: 80px;
   }
 }

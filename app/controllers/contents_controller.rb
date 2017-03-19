@@ -12,14 +12,18 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
-    3.times { @content.relationships.build } unless @content.relationships.length.positive?
+    4.times { @content.relationships.build } unless @content.relationships.length.positive?
  end
 
   def edit
-    3.times { @content.relationships.build } unless @content.relationships.length.positive?
+    if @content.relationships.empty?
+      4.times { @content.relationships.build }
+    end
     puts "====================="
     puts "Built relationships"
     puts @content.relationships.length
+    puts @content.relationships.length.positive?
+    puts @content.relationships.empty?
     puts "====================="
   end
 

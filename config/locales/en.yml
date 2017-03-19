@@ -19,18 +19,17 @@ en:
     table:
       id: "Id"
       key: "Key"
-      next: "Next"
+      option: "Next option"
       actions: "Actions"
       sure: "Are you sure you want to delete this?"
     form:
+      option: "Next option"
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"
     show:
-      answer_one: "Answer 1"
-      answer_two: "Answer 2"
-      answer_three: "Answer 3"
+      answer: "Answer %{number}"
       score: "Score"
-      next: "Next"
+      option: "Next option"
     new:
       title: "New content"
 

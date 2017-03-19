@@ -1,30 +1,32 @@
 $(document).ready(function() {
   $('#content_category').change(function(event) {
-    console.log(event.target);
+    //console.log(event.target);
 
     var $content = $('.content');
     var $leftContent = $content.find(".left");
-    var $next = $content.find(".next");
+    var $options = $content.find(".optiondiv");
     var $score = $content.find(".score");
 
     // Hard-coded value, needs to match the "Question" option in the category enum in content.rb
     if (event.target.options.selectedIndex == 1)
     {
-       console.log("Set to question");
-       $next.hide();
+       //console.log("Set to question");
+       $options.each(function() {
+         this.classList.remove("hidden");
+       });
        $score.hide();
-
-       var $answersDiv = $content.find(".answers");
-       console.log($answersDiv);
-       $answersDiv.show();
-
     }
     else {
-      console.log("Not a question");
-      var $answersDiv = $content.find(".answers");
-      $answersDiv.hide();
-
-      $next.show();
+      //console.log("Not a question");
+      var first = true;
+      $options.each(function() {
+         if (first) {
+           first = false
+         }
+         else {
+           this.classList.add("hidden");
+         }
+      });
       $score.show();
     }
   });

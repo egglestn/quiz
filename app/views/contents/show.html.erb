@@ -8,9 +8,10 @@
   <label><%= @content.key %></label>
   <span><%= @content.text %></span>
   <% if @content.category == "question" %>
-    <label><%= t(".answer_one") %></label><span> <%= @content.relationships[0] %></span>
-    <label><%= t(".answer_two") %></label><span> <%= @content.relationships[1] %></span>
-    <label><%= t(".answer_three") %></label><span> <%= @content.relationships[2] %></span>
+    <% @content.relationships.each_with_index do | rel, index | %>
+      <label><%= t(".answer", number: index+1 ) %></label>
+      <span><%= rel %></span>
+    <% end %>
   <% else %>
     <label><%= t(".score") %></label><span> <%= @content.score %></span>
     <label><%= t(".next") %></label><span> <%= @content.to_content %></span>
