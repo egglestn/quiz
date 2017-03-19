@@ -13,8 +13,10 @@
       <span><%= rel %></span>
     <% end %>
   <% else %>
-    <label><%= t(".score") %></label><span> <%= @content.score %></span>
-    <label><%= t(".next") %></label><span> <%= @content.to_content %></span>
+    <label><%= t(".score") %></label>
+    <span> <%= @content.score %></span>
+    <label><%= t(".option") %></label>
+    <span> <!-- @content.relationships[0].to_content --></span>
   <% end %>
 </div>
 

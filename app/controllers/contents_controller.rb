@@ -19,12 +19,6 @@ class ContentsController < ApplicationController
     if @content.relationships.empty?
       4.times { @content.relationships.build }
     end
-    puts "====================="
-    puts "Built relationships"
-    puts @content.relationships.length
-    puts @content.relationships.length.positive?
-    puts @content.relationships.empty?
-    puts "====================="
   end
 
   def create
@@ -38,16 +32,13 @@ class ContentsController < ApplicationController
   end
 
   def update
-      puts "====================="
-      puts @content
-      puts content_params[:content_ids]
-      puts "====================="
-    if @content.update(content_params)
+    set_relationships
 
-    redirect_to @content, notice: t("success.update", name: @content.key)
-  else
-    render :edit
-  end
+    if @content.update(content_params)
+      redirect_to @content, notice: t("success.update", name: @content.key)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -59,6 +50,14 @@ class ContentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_content
       @content = Content.find(params[:id])
+    end
+
+    # TODO why do we need this??
+    # Also, it does bad things on update
+    def set_relationships
+      content_params[:relationships_attributes].each_with_index do | relationship, _index |
+        @content.relationships.build(to_content: relationship[1][:to_content]) unless relationship[1][:to_content].blank?
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

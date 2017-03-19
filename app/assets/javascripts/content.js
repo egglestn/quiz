@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('#content_category').change(function(event) {
-    //console.log(event.target);
+    // TODO why do we need this??
+    console.log("");
 
     var $content = $('.content');
     var $leftContent = $content.find(".left");
