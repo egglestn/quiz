@@ -2,7 +2,6 @@ class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @answers = Content.where(category: Content.categories["answer"])
     @questions = Content.where(category: Content.categories["question"])
     @explanations = Content.where(category: Content.categories["explanation"])
   end
@@ -12,13 +11,11 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
-    4.times { @content.relationships.build } unless @content.relationships.length.positive?
+    4.times { @content.answers.build } unless @content.answers.length.positive?
  end
 
   def edit
-    if @content.relationships.empty?
-      4.times { @content.relationships.build }
-    end
+    4.times { @content.answers.build } unless @content.answers.length.positive?
   end
 
   def create
@@ -32,8 +29,6 @@ class ContentsController < ApplicationController
   end
 
   def update
-    set_relationships
-
     if @content.update(content_params)
       redirect_to @content, notice: t("success.update", name: @content.key)
     else
@@ -52,13 +47,6 @@ class ContentsController < ApplicationController
       @content = Content.find(params[:id])
     end
 
-    # TODO why do we need this??
-    # Also, it does bad things on update
-    def set_relationships
-      content_params[:relationships_attributes].each_with_index do | relationship, _index |
-        @content.relationships.build(to_content: relationship[1][:to_content]) unless relationship[1][:to_content].blank?
-      end
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
@@ -66,10 +54,8 @@ class ContentsController < ApplicationController
             :text,
             :key,
             :section,
-            :content_ids,
-            :score,
-            :category,
-            relationships_attributes: [:to_content]
+            :next,
+            :category
          )
     end
 end

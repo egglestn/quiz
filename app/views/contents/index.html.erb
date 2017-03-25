@@ -3,18 +3,11 @@
 </div>
 
 <div class="section">
-  <div class="col-right">
-    <h3><%= t(".answers") %></h3>
-    <%= render 'table', contents: @answers %>
-  </div>
+  <h3><%= t(".questions") %></h3>
+  <%= render 'table', contents: @questions %>
 
-  <div class="col-left">
-    <h3><%= t(".questions") %></h3>
-     <%= render 'table', contents: @questions %>
-
-    <h3><%= t(".explanations") %></h3>
-    <%= render 'table', contents: @explanations %>
-  </div>
+  <h3><%= t(".explanations") %></h3>
+  <%= render 'table', contents: @explanations %>
 </div>
 
 <br>

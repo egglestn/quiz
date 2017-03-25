@@ -4,6 +4,7 @@ class CreateContents < ActiveRecord::Migration[5.0]
       t.string :text
       t.string :key
       t.integer :section
+      t.integer :answer_selected
       t.references :content, foreign_key: true
 
       t.timestamps

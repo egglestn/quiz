@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219203331) do
+ActiveRecord::Schema.define(version: 20170325085255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20170219203331) do
     t.integer  "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "content_id"
+    t.index ["content_id"], name: "index_answers_on_content_id", using: :btree
   end
 
   create_table "contents", force: :cascade do |t|
@@ -29,9 +31,10 @@ ActiveRecord::Schema.define(version: 20170219203331) do
     t.integer  "content_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "score"
     t.integer  "category"
+    t.integer  "next_id"
     t.index ["content_id"], name: "index_contents_on_content_id", using: :btree
+    t.index ["next_id"], name: "index_contents_on_next_id", using: :btree
   end
 
   create_table "questions", force: :cascade do |t|
@@ -43,13 +46,6 @@ ActiveRecord::Schema.define(version: 20170219203331) do
     t.integer  "next"
     t.integer  "section"
     t.index ["answers_id"], name: "index_questions_on_answers_id", using: :btree
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "from_content"
-    t.integer  "to_content"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170219203331) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "answers", "contents"
   add_foreign_key "contents", "contents"
   add_foreign_key "questions", "answers", column: "answers_id"
 end

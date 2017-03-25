@@ -8,15 +8,13 @@
   <label><%= @content.key %></label>
   <span><%= @content.text %></span>
   <% if @content.category == "question" %>
-    <% @content.relationships.each_with_index do | rel, index | %>
+    <% @content.answers.each_with_index do | rel, index | %>
       <label><%= t(".answer", number: index+1 ) %></label>
       <span><%= rel %></span>
     <% end %>
   <% else %>
     <label><%= t(".score") %></label>
-    <span> <%= @content.score %></span>
     <label><%= t(".option") %></label>
-    <span> <!-- @content.relationships[0].to_content --></span>
   <% end %>
 </div>
 
