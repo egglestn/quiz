@@ -28,15 +28,6 @@
         <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
       </div>
 
-      <div class="answers">
-        <h4><%= t(".answers") %></h4>
-        <%= f.simple_fields_for :answers do |ff| %>
-          <%= render 'contents/answer_fields', ff: ff %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="right">
       <div class="key">
         <%= label_tag :key %>
         <%= f.text_field :key, placeholder: t(".key_placeholder") %>
@@ -45,6 +36,14 @@
       <div class="text">
         <%= label_tag :text %>
         <%= f.text_area :text, placeholder: t(".content_placeholder") %>
+      </div>
+    </div>
+    <div class="right">
+      <div class="answers">
+        <h4><%= t(".answers") %></h4>
+        <%= f.simple_fields_for :answers do |ff| %>
+          <%= render 'contents/answer_fields', ff: ff %>
+        <% end %>
       </div>
     </div>
   </div>

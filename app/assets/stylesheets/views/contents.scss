@@ -1,5 +1,5 @@
 .content {
-  width: 600px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
   min-height: 300px;
@@ -25,5 +25,16 @@
   .right {
     width: 50%;
     float: right;
+  }
+}
+
+.answer {
+
+  .right {
+    width: 35%;
+  }
+
+  .text {
+    width: 60%;
   }
 }

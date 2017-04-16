@@ -11,10 +11,8 @@
     <% @content.answers.each_with_index do | ans, index | %>
       <label><%= t(".answer", number: index+1 ) %></label>
       <span><%= ans %></span>
+      <span><%= ans.score %></span>
     <% end %>
-  <% else %>
-    <label><%= t(".score") %></label>
-    <label><%= t(".option") %></label>
   <% end %>
 </div>
 
