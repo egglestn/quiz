@@ -1,3 +1,3 @@
 class Answer < ApplicationRecord
-  belongs_to :contents
+  belongs_to :content
 end

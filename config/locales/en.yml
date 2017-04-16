@@ -27,6 +27,7 @@ en:
       option: "Next option"
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"
+      answers: "Answers"
     show:
       answer: "Answer %{number}"
       score: "Score"

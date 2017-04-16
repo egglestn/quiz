@@ -35,9 +35,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Needed for this app
+# Security / user management
 gem 'devise'
+
+# Font awesome icons
 gem "font-awesome-rails"
+
+# Form helper
+gem "simple_form"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

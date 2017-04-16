@@ -10,12 +10,13 @@ class ContentsController < ApplicationController
   end
 
   def new
-    @content = Content.new
+    @others = Content.all
     4.times { @content.answers.build } unless @content.answers.length.positive?
  end
 
   def edit
-    4.times { @content.answers.build } unless @content.answers.length.positive?
+     @others = Content.where.not(id: @content.id)
+     4.times { @content.answers.build } unless @content.answers.length.positive?
   end
 
   def create
@@ -55,7 +56,13 @@ class ContentsController < ApplicationController
             :key,
             :section,
             :next,
-            :category
+            :category,
+            :answers,
+            answers_attributes:
+                              [:id,
+                               :key,
+                               :text,
+                               :score]
          )
     end
 end
