@@ -10,8 +10,9 @@ class ContentsController < ApplicationController
   end
 
   def new
-    @others = Content.all
-    4.times { @content.answers.build } unless @content.answers.length.positive?
+     @content = Content.new
+     @others = Content.all
+     4.times { @content.answers.build } unless @content.answers.length.positive?
  end
 
   def edit

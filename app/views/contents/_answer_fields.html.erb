@@ -1,6 +1,4 @@
 <div class="answer">
-  <%= ff.input :key %>
-  <%= ff.input :text %>
-  <%= label_tag :score %>
-  <%= ff.number_field :score, min: 0, max: 10, value: 5 %>
+  <%= label_tag :answer %> <%= ff.text_field :text %>
+  <%= label_tag :score %> <%= ff.number_field :score, min: 0, max: 10, value: 5 %>
 </div>
