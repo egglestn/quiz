@@ -18,5 +18,5 @@
 
 <div class="actions">
   <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
-  <%= link_to t("back"), contents_path, class: "right" %>
+  <%= link_to t("next"), content_path(@content.next_id), class: "right" if @content.next_id %>
 </div>

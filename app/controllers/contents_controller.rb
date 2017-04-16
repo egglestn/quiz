@@ -56,7 +56,7 @@ class ContentsController < ApplicationController
             :text,
             :key,
             :section,
-            :next,
+            :next_id,
             :category,
             :answers,
             answers_attributes:
