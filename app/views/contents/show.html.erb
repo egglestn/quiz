@@ -8,9 +8,9 @@
   <label><%= @content.key %></label>
   <span><%= @content.text %></span>
   <% if @content.category == "question" %>
-    <% @content.answers.each_with_index do | rel, index | %>
+    <% @content.answers.each_with_index do | ans, index | %>
       <label><%= t(".answer", number: index+1 ) %></label>
-      <span><%= rel %></span>
+      <span><%= ans %></span>
     <% end %>
   <% else %>
     <label><%= t(".score") %></label>
