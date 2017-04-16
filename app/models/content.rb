@@ -2,13 +2,15 @@ class Content < ApplicationRecord
   has_one :next
   has_many :answers
 
+  validates :key, presence: true
+
   enum category: [
     :question,
     :explanation
   ]
 
   enum section: [
-    :world_without_maths,
+    :introduction,
     :number_system,
     :geometry
   ]

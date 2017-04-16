@@ -1,7 +1,7 @@
 <%= form_for(content) do |f| %>
   <% if content.errors.any? %>
-    <div id="error_explanation">
-      <h2>t(".errors")</h2>
+    <div class="error" id="error_explanation">
+      <h2><%= t(".errors") %></h2>
       <ul>
       <% content.errors.full_messages.each do |message| %>
         <li><%= message %></li>

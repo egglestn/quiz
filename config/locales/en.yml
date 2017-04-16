@@ -23,6 +23,7 @@ en:
       actions: "Actions"
       sure: "Are you sure you want to delete this?"
     form:
+      errors: "Unable to save, for details see the list below"
       option: "Next option"
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"

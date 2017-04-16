@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: $brand-high-contrast;
+  background-color: $brand-background;
 }
 
 .section {
@@ -10,6 +10,12 @@ body {
 
 .header {
   background-color: $brand-primary;
+}
+
+.error {
+  h2 {
+    color: $brand-error;
+  }
 }
 
 .actions {
