@@ -1,7 +1,8 @@
 <h2><%= t(".title") %></h2>
 
-<div class="actions">
-  <%= link_to t(".contents"), contents_path %>
-  <%= link_to t(".users"), users_path %>
-</div>
-
+<% if current_user.admin? %>
+  <div class="actions">
+    <%= link_to t(".contents"), contents_path %>
+    <%= link_to t(".users"), users_path %>
+  </div>
+<% end %>

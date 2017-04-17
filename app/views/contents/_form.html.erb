@@ -20,7 +20,7 @@
 
       <div class="follows">
         <%= label_tag :next %>
-        <%= f.collection_select :next_id, @others, :id, :key, include_blank: true %>
+        <%= f.collection_select :next_id, @others || [], :id, :key, include_blank: true %>
       </div>
 
       <div class="topic">
