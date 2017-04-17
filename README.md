@@ -7,6 +7,7 @@ TODO:
 * Post up to heroku
 * Create new content -> make fields more dynamic, next can be blank
 * Scoring
+* I18n for devise
 
 Done
 * i18n translations

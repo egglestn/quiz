@@ -1,0 +1,14 @@
+<div class="header">
+  <% if current_user.present? %>
+    <span>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    </span>
+  <% else %>
+    <span>
+      <%= link_to('Login', new_user_session_path)  %>
+    </span>
+  <% end %>
+  <h1><%= t(".title") %></h1>
+</div>
+
+<p id="notice"><%= notice %></p>

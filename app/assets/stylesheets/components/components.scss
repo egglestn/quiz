@@ -13,10 +13,16 @@ a, input[type="submit"] {
 input[type="submit"], .primary {
   color: $brand-background;
   background-color: $brand-primary;
+  font-size: 16px;
 }
 
 input, textarea {
   border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
 }
 
 input:focus, textarea:focus {
@@ -31,12 +37,12 @@ label {
 
 h1, h2 {
   padding: 10px;
-  color: $brand-background;
+  color: $brand-primary;
 }
 
 table {
   background-color: $brand-white;
-  width: 440px;
+  min-width: 50%;
   table-spacing: 6px;
 
   thead {
@@ -65,4 +71,19 @@ table {
 
 .hidden {
   display: none;
+}
+
+.header {
+  color: $brand-background;
+  height: 60px;
+
+  h1 {
+    width: 30%;
+  }
+
+  span {
+    float: right;
+    margin-top: 22px;
+    padding-right: 10px;
+ }
 }

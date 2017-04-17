@@ -35,6 +35,14 @@ en:
     new:
       title: "New content"
 
+  components:
+    header:
+      title: "Welcome"
+
+  dashboard:
+    show:
+      title: "Dashboard"
+
   activerecord:
     models:
       content: "Content"
