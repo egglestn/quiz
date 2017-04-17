@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= t(".email") %></th>
+      <th><%= t(".role") %></th>
+      <th><%= t(".actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role.titleize %></td>
+        <td>
+          <%= link_to "", edit_user_path(user), class: "fa fa-edit" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

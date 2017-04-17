@@ -45,6 +45,15 @@ en:
       contents: "Manage contents"
       users: "Manage users"
 
+  users:
+    index:
+      email: "Email"
+      role: "Role"
+      actions: "Actions"
+    edit:
+      title: "Edit %{user}"
+      role: "Role"
+
   activerecord:
     models:
       content: "Content"

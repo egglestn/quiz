@@ -6,11 +6,14 @@ TODO:
 * Section-sorting
 * Testing!
 * Post up to heroku
-* Create new content -> make fields more dynamic, next can be blank
 * Scoring
 * I18n for devise
+* Add rubocop and best practices gems
 
 Done
 * i18n translations
-* Remove question and answer tables no longer needed
-* Delete scaffolds.scss
+* Content - questions and explanations
+* Answers nested under question content
+* Create new content -> make fields more dynamic, next can be blank
+* Dashboard
+* Login / logout

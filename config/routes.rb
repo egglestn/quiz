@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :answers
   resources :contents
   resources :dashboard, only: :show
+  resources :users, only: [:index, :edit, :update]
   devise_for :users
 
   authenticated :user do
