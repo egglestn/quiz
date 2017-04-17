@@ -42,6 +42,8 @@ en:
   dashboard:
     show:
       title: "Dashboard"
+      contents: "Manage contents"
+      users: "Manage users"
 
   activerecord:
     models:
