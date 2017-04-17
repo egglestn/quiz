@@ -1,13 +1,14 @@
 # README
 
 TODO:
-* Add ability for question to reference multiple answers
+* Guest users need to see something other than blank dashboard
+* Ability to link back to dashboard / homepage from somewhere (!)
 * Section-sorting
-* Testing!
+* Test everything
 * Scoring
 * I18n for devise
 * Add rubocop and best practices gems
-* Fix deprecated stuff
+* Fix deprecated warnings
 
 Done
 * i18n translations
@@ -18,3 +19,4 @@ Done
 * Login / logout
 * Admin vs ordinary users
 * Post up to heroku
+* Add ability for question to reference multiple answers
