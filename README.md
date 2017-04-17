@@ -1,6 +1,7 @@
 # README
 
 TODO:
+* Admin vs ordinary users
 * Add ability for question to reference multiple answers
 * Section-sorting
 * Testing!

@@ -1,9 +1,3 @@
-<div>
-  Found questions and explanations:
-  <%= @questions.length %>
-  <%= @explanations.length %>
-</div>
-
 <div class="section">
   <h3><%= t(".questions") %></h3>
   <%= render 'table', contents: @questions %>
