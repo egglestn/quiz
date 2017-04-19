@@ -6,6 +6,5 @@
     <%= link_to t(".users"), users_path %>
   </div>
 <% else %>
-
-
+  <%= render "components/content", content: @content if @content.present? %>
 <% end %>

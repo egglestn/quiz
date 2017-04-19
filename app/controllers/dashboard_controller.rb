@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def show
-    @content = Content.where(key="Welcome")
+    @content = Content.find(1)
   end
 
 end
