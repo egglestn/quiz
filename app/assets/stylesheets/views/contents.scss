@@ -18,12 +18,12 @@
   }
 
   .left {
-    width: 50%;
+    width: 60%;
     float: left;
   }
 
   .right {
-    width: 50%;
+    width: 40%;
     float: right;
   }
 }
@@ -38,4 +38,8 @@
     width: 60%;
     float: left;
   }
+}
+
+.content_text {
+  width: 420px;
 }

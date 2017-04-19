@@ -41,6 +41,9 @@ gem 'devise'
 # Font awesome icons
 gem "font-awesome-rails"
 
+# Wysiwyg editor
+gem 'ckeditor'
+
 # Form helper
 gem "simple_form"
 

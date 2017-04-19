@@ -1,4 +1,4 @@
-<%= form_for(content) do |f| %>
+<%= simple_form_for(content) do |f| %>
   <% if content.errors.any? %>
     <div class="error" id="error_explanation">
       <h2><%= t(".errors") %></h2>
@@ -34,8 +34,8 @@
       </div>
 
       <div class="text">
-        <%= label_tag :text %>
-        <%= f.text_area :text, placeholder: t(".content_placeholder") %>
+        <!-- f.text_area :text, placeholder: t(".content_placeholder") -->
+        <%= f.input :text, as: :ckeditor, placeholder: t(".content_placeholder"), input_html: { ckeditor: { toolbar: 'mini' } } %>
       </div>
     </div>
     <div class="right">

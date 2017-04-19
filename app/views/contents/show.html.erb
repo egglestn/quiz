@@ -3,7 +3,7 @@
     <label><%= @content.category.titleize %>
     <%= @content.id %></label>
     <label><%= @content.key %></label>
-    <span><%= @content.text %></span>
+    <span><%= @content.text.html_safe %></span>
     <% if @content.category == "question" %>
       <% @content.answers.each_with_index do | ans, index | %>
         <% if ans.text? %>
