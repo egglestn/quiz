@@ -6,9 +6,11 @@
     <span><%= @content.text %></span>
     <% if @content.category == "question" %>
       <% @content.answers.each_with_index do | ans, index | %>
-        <label><%= t(".answer", number: index+1 ) %></label>
-        <span><%= ans %></span>
-        <span><%= ans.score %></span>
+        <% if ans.text? %>
+          <label><%= t(".answer", number: index+1 ) %></label>
+          <span><%= ans %></span>
+          <span><%= ans.score %></span>
+        <% end %>
       <% end %>
     <% end %>
   </div>

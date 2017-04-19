@@ -1,14 +1,16 @@
 # README
 
 TODO:
+* JS for show /hide answers is broken
 * Guest users need to see something other than blank dashboard
 * Ability to link back to dashboard / homepage from somewhere (!)
-* Section-sorting
+* Section display and links
 * Test everything
 * Scoring
 * I18n for devise
 * Add rubocop and best practices gems
 * Fix deprecated warnings
+* Do something about DB content backup
 
 Done
 * i18n translations
