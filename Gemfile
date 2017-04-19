@@ -44,6 +44,9 @@ gem "font-awesome-rails"
 # Wysiwyg editor
 gem 'ckeditor'
 
+# Serve static assets in prod
+gem 'rails_12factor'
+
 # Form helper
 gem "simple_form"
 
