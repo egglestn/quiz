@@ -1,11 +1,11 @@
 # README
 
 TODO:
-* Guest users need to see something other than blank dashboard
+* Ability to know what answer the user selected
 * Ability to link back to dashboard / homepage from somewhere (!)
 * Section display and links
-* Test everything
 * Scoring
+* Test everything
 * I18n for devise
 * Add rubocop and best practices gems
 * Fix deprecated warnings
@@ -23,5 +23,5 @@ Done:
 * Add ability for question to reference multiple answers
 * wysiwyg editor
 * Fix JS for show /hide answers (only a workaround)
-
+* Guest users need to see something other than blank dashboard
 
