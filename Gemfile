@@ -43,6 +43,8 @@ gem "font-awesome-rails"
 
 # Wysiwyg editor
 gem 'ckeditor'
+# Generate digest and non-digest assets, mainly needed for the ck editor
+gem "non-stupid-digest-assets"
 
 # Serve static assets in prod
 gem 'rails_12factor'
