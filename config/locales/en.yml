@@ -28,16 +28,17 @@ en:
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"
       answers: "Answers"
-    show:
-      answer: "Answer %{number}"
-      score: "Score"
-      next: "Next"
     new:
       title: "New content"
 
   components:
     header:
       title: "Welcome"
+    content:
+      answer: "Answer %{number}"
+      score: "Score"
+      next: "Next"
+      end: "This is the last question, you have completed the section!"
 
   dashboard:
     show:

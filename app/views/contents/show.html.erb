@@ -1,22 +1,11 @@
-<% if @content.present? %>
-  <div class="section content">
-    <label><%= @content.category.titleize %>
-    <%= @content.id %></label>
-    <label><%= @content.key %></label>
-    <span><%= @content.text.html_safe %></span>
-    <% if @content.category == "question" %>
-      <% @content.answers.each_with_index do | ans, index | %>
-        <% if ans.text? %>
-          <label><%= t(".answer", number: index+1 ) %></label>
-          <span><%= ans %></span>
-          <span><%= ans.score %></span>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
 
-  <div class="actions">
-    <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
-    <%= link_to t("next"), content_path(@content.next_id), class: "right" if @content.next_id %>
-  </div>
+<h2><%= @content.category.titleize %> #<%= @content.id %></h2>
+
+<% if @content.present? %>
+  <%= render "components/content", content: @content %>
 <% end %>
+
+<div class="actions">
+  <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
+</div>
+

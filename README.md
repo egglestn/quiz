@@ -1,7 +1,6 @@
 # README
 
 TODO:
-* JS for show /hide answers is broken
 * Guest users need to see something other than blank dashboard
 * Ability to link back to dashboard / homepage from somewhere (!)
 * Section display and links
@@ -12,8 +11,8 @@ TODO:
 * Fix deprecated warnings
 * Do something about DB content backup
 
-Done
-* i18n translations
+Done:
+* i18n translation infrastructure
 * Content - questions and explanations
 * Answers nested under question content
 * Create new content -> make fields more dynamic, next can be blank
@@ -22,3 +21,7 @@ Done
 * Admin vs ordinary users
 * Post up to heroku
 * Add ability for question to reference multiple answers
+* wysiwyg editor
+* Fix JS for show /hide answers (only a workaround)
+
+
