@@ -11,7 +11,14 @@
   <% end %>
 
   <div class="content">
-    <%= content_tag(:div, "", data: {contents: @answers}, class: "data") %>
+    <div class="right">
+      <div class="answers <%= @content.category == "explanation" ? "hidden" : "" %>">
+        <h4><%= t(".answers") %></h4>
+        <%= f.simple_fields_for :answers do |ff| %>
+          <%= render 'contents/answer_fields', ff: ff %>
+        <% end %>
+      </div>
+    </div>
     <div class="left">
       <div class="category">
         <%= label_tag :category %>
@@ -38,15 +45,10 @@
         <%= f.input :text, as: :ckeditor, placeholder: t(".content_placeholder"), input_html: { ckeditor: { toolbar: 'mini' } } %>
       </div>
     </div>
-    <div class="right">
-      <div class="answers <%= @content.category == "explanation" ? "hidden" : "" %>">
-        <h4><%= t(".answers") %></h4>
-        <%= f.simple_fields_for :answers do |ff| %>
-          <%= render 'contents/answer_fields', ff: ff %>
-        <% end %>
-      </div>
-    </div>
+
   </div>
+  <%= content_tag(:div, "", data: {contents: @answers}, class: "data col-md-0") %>
+
 
   <div class="actions">
     <%= f.submit t("save") %>

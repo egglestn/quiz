@@ -11,11 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "font-awesome";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import 'colours';
- @import 'layout';
- @import 'components/components';
+@import 'colours';
+@import 'layout';
 
- @import 'views/contents';
- @import 'views/devise';
+@import 'components/components';
+
+@import 'views/contents';
+@import 'views/devise';

@@ -16,7 +16,7 @@ en:
       questions: "Questions"
       explanations: "Explanations"
       new: "New content"
-    table:
+    contents_table:
       id: "Id"
       key: "Key"
       next: "Next"

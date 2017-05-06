@@ -41,6 +41,9 @@ gem 'devise'
 # Font awesome icons
 gem "font-awesome-rails"
 
+# Bootstrap for UI
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Wysiwyg editor
 gem 'ckeditor'
 # Generate digest and non-digest assets, mainly needed for the ck editor

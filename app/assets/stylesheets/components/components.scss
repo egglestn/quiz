@@ -40,18 +40,13 @@ h1, h2 {
   color: $brand-primary;
 }
 
-table {
+.contents-table {
   background-color: $brand-white;
   min-width: 50%;
-  table-spacing: 6px;
+  border-spacing: 6px;
 
   thead {
-   border-color: $brand-contrast;
-   border-top-style: solid;
-   border-top-width: 1px;
-   border-bottom-style: solid;
-   border-bottom-width: 1px;
-   text-align: left;
+    text-align: left;
   }
 
   th {
