@@ -64,8 +64,21 @@ h1, h2 {
   }
 }
 
+label {
+  font-weight: bold;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .hidden {
   display: none;
+}
+
+.fa {
+  width: 14px;
 }
 
 .header {

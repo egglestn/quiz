@@ -10,16 +10,10 @@
     </div>
   <% end %>
 
-  <div class="content">
-    <div class="right">
-      <div class="answers <%= @content.category == "explanation" ? "hidden" : "" %>">
-        <h4><%= t(".answers") %></h4>
-        <%= f.simple_fields_for :answers do |ff| %>
-          <%= render 'contents/answer_fields', ff: ff %>
-        <% end %>
-      </div>
-    </div>
-    <div class="left">
+  <div class="content row">
+    <div class="col-sm-8">
+      <h4><%= t(".contents") %></h4>
+
       <div class="category">
         <%= label_tag :category %>
         <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
@@ -43,6 +37,14 @@
       <div class="text">
         <!-- f.text_area :text, placeholder: t(".content_placeholder") -->
         <%= f.input :text, as: :ckeditor, placeholder: t(".content_placeholder"), input_html: { ckeditor: { toolbar: 'mini' } } %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="answers <%= @content.category == "explanation" ? "hidden" : "" %>">
+        <h4><%= t(".answers") %></h4>
+        <%= f.simple_fields_for :answers do |ff| %>
+          <%= render 'contents/answer_fields', ff: ff %>
+        <% end %>
       </div>
     </div>
 

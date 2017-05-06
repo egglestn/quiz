@@ -28,6 +28,7 @@ en:
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"
       answers: "Answers"
+      contents: "Contents"
     new:
       title: "New content"
 
