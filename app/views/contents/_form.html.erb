@@ -15,7 +15,7 @@
     <div class="left">
       <div class="category">
         <%= label_tag :category %>
-        <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}) %>
+        <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
       </div>
 
       <div class="follows">
