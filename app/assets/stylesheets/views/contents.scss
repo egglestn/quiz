@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.answers {
+  padding: 20px;
+}
+
 .answer {
 
   .right {
@@ -18,4 +22,9 @@
 
 .hidden {
   display: none;
+}
+
+.selected {
+  font-weight: bold;
+  font-size: 18px;
 }

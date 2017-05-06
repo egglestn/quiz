@@ -4,7 +4,7 @@
   <% if content.category == "question" && content.next_id? %>
     <% content.answers.each_with_index do | ans, index | %>
       <% if ans.text? %>
-        <%= link_to ans, content_path(content.next_id) %>
+        <%= link_to ans, content_path(content.next_id, selected: index, answers: @answers_to_pass) %>
       <% end %>
     <% end %>
   <% elsif content.next_id %>

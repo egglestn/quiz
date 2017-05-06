@@ -8,6 +8,14 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @selected = params[:selected] || -1
+
+    if params[:answers].present?
+       @answers = params[:answers]
+    else
+      @answers_to_pass = @content.answers.pluck(:text)
+    end
+
   end
 
   def new

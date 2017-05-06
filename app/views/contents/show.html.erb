@@ -1,6 +1,10 @@
 
 <h2><%= @content.category.titleize %> #<%= @content.id %></h2>
 
+<% if @answers.present? %>
+  <%= render "answers", answers: @answers %>
+<% end %>
+
 <% if @content.present? %>
   <%= render "components/content", content: @content %>
 <% end %>

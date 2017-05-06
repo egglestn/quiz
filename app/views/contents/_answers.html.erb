@@ -1,0 +1,9 @@
+<div class="section answers">
+  <% answers.each_with_index do | text, index | %>
+    <% if index.to_s == @selected %>
+      <h4> <%= t(".you_chose") %> <%= text %> </h4>
+    <% else %>
+      <div class="answer"> <%= text %> </div>
+    <% end %>
+  <% end %>
+</div>

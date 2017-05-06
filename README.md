@@ -1,7 +1,6 @@
 # README
 
 TODO:
-* Ability to know what answer the user selected
 * Ability to link back to dashboard / homepage from somewhere (!)
 * Section display and links
 * Scoring
@@ -24,4 +23,5 @@ Done:
 * wysiwyg editor
 * Fix JS for show /hide answers (only a workaround)
 * Guest users need to see something other than blank dashboard
+* Ability to know what answer the user selected
 

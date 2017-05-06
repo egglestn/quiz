@@ -31,6 +31,8 @@ en:
       contents: "Contents"
     new:
       title: "New content"
+    answers:
+      you_chose: "You selected: "
 
   components:
     header:
