@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -39,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Font awesome icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Bootstrap for UI
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -47,17 +46,17 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Wysiwyg editor
 gem 'ckeditor'
 # Generate digest and non-digest assets, mainly needed for the ck editor
-gem "non-stupid-digest-assets"
+gem 'non-stupid-digest-assets'
 
 # Serve static assets in prod
 gem 'rails_12factor'
 
 # Form helper
-gem "simple_form"
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "byebug"
+  gem 'byebug'
 end
 
 group :development do

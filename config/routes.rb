@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root to: "dashboard#show"
+    root to: 'dashboard#show'
   end
 
-  root to: redirect("/users/sign_in")
+  root to: redirect('/users/sign_in')
 end

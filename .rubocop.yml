@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'db/**'
+    - 'db/migrate/**'
+    - 'config/initializers/**'
+    - 'config/initializers/backtrace_silencers'
+    - 'config/initializers/bnon_digest_assets'
+
+
+Metrics/LineLength:
+  # Change the default 80 chars limit value
+  Max: 99

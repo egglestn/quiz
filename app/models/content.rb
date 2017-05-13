@@ -1,3 +1,4 @@
+# Class with primary live content
 class Content < ApplicationRecord
   has_one :next
   has_many :answers

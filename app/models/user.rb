@@ -1,3 +1,4 @@
+# Devise user model, overriding to enable roles
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,5 +9,4 @@ class User < ApplicationRecord
     :default,
     :admin
   ]
-
 end
