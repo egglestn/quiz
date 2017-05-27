@@ -1,7 +1,10 @@
 # Class with primary live content
 class Content < ApplicationRecord
-  has_one :next
-  has_many :answers
+  belongs_to :next, dependent: :destroy, optional: true
+  has_many :answers, dependent: :destroy
+
+  attr_accessor :create_next
+  attr_accessor :previous_id
   accepts_nested_attributes_for :answers
 
   validates :key, presence: true

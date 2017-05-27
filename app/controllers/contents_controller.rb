@@ -31,9 +31,14 @@ class ContentsController < ApplicationController
 
   def create
     @content = Content.new(content_params)
+    @content[:next_id] = nil if content_params[:next_id].empty?
 
     if @content.save
-      redirect_to @content, notice: t('success.create', name: @content.key)
+      notice = t('success.create', name: @content.key)
+      if content_params[:create_next].to_i > 0
+        redirect_to new_content_path(previous_id: @content.id), notice: notice && return
+      end
+      redirect_to contents_path, notice: notice
     else
       render :new
     end
@@ -48,6 +53,8 @@ class ContentsController < ApplicationController
   end
 
   def destroy
+    # Only delete this record, not any related ones
+    @content.next_id = ''
     @content.destroy
     redirect_to contents_url, notice: t('success.destroy', name: @content.key)
   end
@@ -68,6 +75,8 @@ class ContentsController < ApplicationController
       :next_id,
       :category,
       :answers,
+      :create_next,
+      :previous_id,
       answers_attributes: [:id, :key, :text, :score]
     )
   end

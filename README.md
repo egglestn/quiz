@@ -9,6 +9,7 @@ TODO:
 * Add rubocop and best practices gems
 * Fix deprecated warnings
 * Do something about DB content backup
+* Make sure you can't select current question as previous / next
 
 Done:
 * i18n translation infrastructure

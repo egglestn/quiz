@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Best practices static code analysis
+gem 'rails_best_practices'
+
 # Security / user management
 gem 'devise'
 

@@ -3,6 +3,8 @@
 en:
   next: "Next"
   save: "Save"
+  save_and_next: "Save and create next"
+  save_and_finish: "Save and finish"
   edit: "Edit"
 
   success:
