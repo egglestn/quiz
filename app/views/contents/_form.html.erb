@@ -21,7 +21,7 @@
 
       <div class="follows">
         <%= label_tag :next %>
-        <%= f.collection_select :next_id, @others || [], :id, :key, include_blank: true %>
+        <%= f.collection_select :next_id, others || [], :id, :key, include_blank: true %>
         <%= f.check_box :create_next %>
       </div>
 
@@ -41,17 +41,16 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="answers <%= @content.category == "explanation" ? "hidden" : "" %>">
+      <div class="answers <%= content.category == "explanation" ? "hidden" : "" %>">
         <h4><%= t(".answers") %></h4>
         <%= f.simple_fields_for :answers do |ff| %>
-          <%= render 'contents/answer_fields', ff: ff %>
+          <%= render 'contents/answer_fields', ff: ff, selected: selected %>
         <% end %>
       </div>
     </div>
 
   </div>
-  <%= content_tag(:div, "", data: {contents: @answers}, class: "data col-md-0") %>
-
+  <%= content_tag(:div, "", data: {contents: content.answers}, class: "data col-md-0") %>
 
   <div class="actions">
     <%= f.submit t("save") %>

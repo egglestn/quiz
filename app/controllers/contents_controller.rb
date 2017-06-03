@@ -33,15 +33,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content[:next_id] = nil if content_params[:next_id].empty?
 
-    if @content.save
-      notice = t('success.create', name: @content.key)
-      if content_params[:create_next].to_i > 0
-        redirect_to new_content_path(previous_id: @content.id), notice: notice && return
-      end
-      redirect_to contents_path, notice: notice
-    else
-      render :new
-    end
+    save_content
   end
 
   def update
@@ -61,6 +53,19 @@ class ContentsController < ApplicationController
 
   private
 
+  def save_content
+    if @content.save
+      notice = t('success.create', name: @content.key)
+      if content_params[:create_next].to_i > 0
+        redirect_to new_content_path(previous_id: @content.id), notice: notice
+      else
+        redirect_to contents_path, notice: notice
+      end
+    else
+      render :new
+    end
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_content
     @content = Content.find(params[:id])
@@ -69,14 +74,10 @@ class ContentsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def content_params
     params.require(:content).permit(
-      :text,
-      :key,
-      :section,
-      :next_id,
-      :category,
-      :answers,
-      :create_next,
-      :previous_id,
+      :text, :key,
+      :section, :next_id,
+      :category, :answers,
+      :create_next, :previous_id,
       answers_attributes: [:id, :key, :text, :score]
     )
   end

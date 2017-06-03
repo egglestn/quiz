@@ -1,6 +1,6 @@
 # Class with primary live content
 class Content < ApplicationRecord
-  belongs_to :next, dependent: :destroy, optional: true
+  belongs_to :next, dependent: :destroy, optional: true, class_name: Content
   has_many :answers, dependent: :destroy
 
   attr_accessor :create_next

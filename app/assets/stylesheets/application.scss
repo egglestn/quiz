@@ -15,9 +15,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import 'colours';
-@import 'layout';
-
+@import 'components/fonts';
+@import 'components/colours';
+@import 'components/layout';
 @import 'components/components';
 
 @import 'views/contents';

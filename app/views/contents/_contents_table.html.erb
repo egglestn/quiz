@@ -13,7 +13,7 @@
       <tr>
         <td><%= content.id %></td>
         <td><%= link_to content.key, content_path(content) %></td>
-        <td><%= content.next_id %></td>
+        <td><%= content.next %></td>
         <td>
           <%= link_to "", edit_content_path(content), class: "fa fa-edit" %>
           <%= link_to "", content, method: :delete, data: { confirm: t(".sure") }, class: "fa fa-trash" %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :answers
+  resources :answers, only: []
   resources :contents
   resources :dashboard, only: :show
   resources :users, only: [:index, :edit, :update]
