@@ -33,12 +33,16 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content[:next_id] = nil if content_params[:next_id].empty?
 
-    save_content
+    if @content.save
+      successful_save('success.create')
+    else
+      render :new
+    end
   end
 
   def update
     if @content.update(content_params)
-      redirect_to @content, notice: t('success.update', name: @content.key)
+      successful_save('success.update')
     else
       render :edit
     end
@@ -53,16 +57,12 @@ class ContentsController < ApplicationController
 
   private
 
-  def save_content
-    if @content.save
-      notice = t('success.create', name: @content.key)
-      if content_params[:create_next].to_i > 0
-        redirect_to new_content_path(previous_id: @content.id), notice: notice
-      else
-        redirect_to contents_path, notice: notice
-      end
+  def successful_save(method_name)
+    notice = t(method_name, name: @content.key)
+    if content_params[:create_next].to_i > 0
+      redirect_to new_content_path(previous_id: @content.id), notice: notice
     else
-      render :new
+      redirect_to contents_path, notice: notice
     end
   end
 
