@@ -31,6 +31,7 @@ en:
       content_placeholder: "Question, answer or explanation text"
       answers: "Answers"
       contents: "Contents"
+      save_and_next: "Save and create next"
     new:
       title: "New content"
     answers:

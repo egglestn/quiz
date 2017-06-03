@@ -21,6 +21,8 @@ class ContentsController < ApplicationController
   def new
     @content = Content.new
     @others = Content.all
+    @previous_id = params[:previous_id]
+
     4.times { @content.answers.build } unless @content.answers.length.positive?
   end
 
@@ -34,6 +36,7 @@ class ContentsController < ApplicationController
     @content[:next_id] = nil if content_params[:next_id].empty?
 
     if @content.save
+      update_previous
       successful_save('success.create')
     else
       render :new
@@ -57,12 +60,19 @@ class ContentsController < ApplicationController
 
   private
 
+  def update_previous
+    prev_id = content_params[:previous_id]
+    return if prev_id.to_i < 0
+    @previous = Content.find(prev_id)
+    @previous.update_attribute(:next_id, @content.id)
+  end
+
   def successful_save(method_name)
     notice = t(method_name, name: @content.key)
-    if content_params[:create_next].to_i > 0
-      redirect_to new_content_path(previous_id: @content.id), notice: notice
-    else
+    if params[:commit] == t('save')
       redirect_to contents_path, notice: notice
+    else
+      redirect_to new_content_path(previous_id: @content.id), notice: notice
     end
   end
 
