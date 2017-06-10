@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @section = t(".title")
+    @section = t('.title')
   end
 
   def edit; end
