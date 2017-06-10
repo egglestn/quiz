@@ -1,15 +1,19 @@
-
 <h2><%= @content.category.titleize %> #<%= @content.id %></h2>
-
-<% if @answers.present? %>
-  <%= render "answers", answers: @answers %>
-<% end %>
 
 <% if @content.present? %>
   <%= render "components/content", content: @content, answers: @answers_to_pass %>
 <% end %>
 
-<div class="actions">
-  <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
-</div>
+<% if @answers.present? %>
+  <%= render "answers", answers: @answers %>
+<% elsif @content.next.present? %>
+  <div class="actions">
+    <%= link_to @content.next.key, content_path(@content.next) %>
+  </div>
+<% end %>
 
+<% if current_user.admin? %>
+  <div class="actions">
+    <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
+  </div>
+<% end %>
