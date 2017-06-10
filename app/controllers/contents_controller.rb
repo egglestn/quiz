@@ -6,17 +6,13 @@ class ContentsController < ApplicationController
   def index
     @questions = Content.where(category: Content.categories['question'])
     @explanations = Content.where(category: Content.categories['explanation'])
-    @content = @questions[0]
+    @section = t("dashboard.show.admin_dashboard")
   end
 
   def show
     @selected = params[:selected] || -1
-
-    if params[:answers].present?
-      @answers = params[:answers]
-    else
-      @answers_to_pass = @content.answers.pluck(:text)
-    end
+    @previous = Content.where(next: @content.id).first
+    @options = @content.answers.pluck(:text)
   end
 
   def new

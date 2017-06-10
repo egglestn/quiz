@@ -51,12 +51,14 @@ en:
       title: "Welcome"
       contents: "Manage contents"
       users: "Manage users"
+      admin_dashboard: "Admin dashboard"
 
   users:
     index:
       email: "Email"
       role: "Role"
       actions: "Actions"
+      title: "Users"
     edit:
       title: "Edit %{user}"
       role: "Role"

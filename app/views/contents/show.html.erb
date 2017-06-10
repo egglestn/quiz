@@ -1,12 +1,12 @@
 <div class="container">
   <h3><%= @content.key %></h3>
 
-  <% if @answers.present? %>
-    <%= render "answers", answers: @answers, selected: @selected %>
+  <% if @selected.to_i >= 0 %>
+    <%= render "answers", selected: @selected, answers: @previous.answers %>
   <% end %>
 
   <% if @content.present? %>
-    <%= render "components/content", content: @content, answers: @answers_to_pass %>
+    <%= render "components/content", content: @content, options: @options %>
   <% elsif @content.next.present? %>
     <div class="actions">
       <%= link_to @content.next, content_path(@content.next) %>

@@ -1,12 +1,12 @@
 <div class="content">
   <div><%= content.text.html_safe %></div>
 
-  <% if answers.present? && answers[0].length.positive? && content.next_id %>
-    <div class="answers">
-      <% content.answers.each_with_index do | ans, index | %>
-        <% if ans.text? %>
-          <div class="answer-container">
-            <%= link_to ans, content_path(content.next_id, selected: index, answers: answers), class: "select-answer" %>
+  <% if options.present? && options[0].length.positive? && content.next_id %>
+    <div class="options">
+      <% options.each_with_index do | option, index | %>
+        <% if option.length.positive? %>
+          <div class="option-container">
+            <%= link_to option, content_path(content.next_id, selected: index), class: "select-option" %>
           </div>
         <% end %>
       <% end %>
