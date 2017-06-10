@@ -8,6 +8,11 @@ a, input[type="submit"], .btn {
   border-radius: 6px;
   color: $brand-primary;
   border-color: $brand-primary;
+
+  &:focus, &:hover {
+    text-decoration: none;
+    outline: none;
+  }
 }
 
 input[type="submit"], .primary {
@@ -86,7 +91,6 @@ select {
   height: 60px;
 
   .title {
-    width: 30%;
     float: left;
     margin-top: 2px;
   }

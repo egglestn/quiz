@@ -39,7 +39,7 @@ en:
 
   components:
     header:
-      title: "Welcome"
+      title: "World without maths"
     content:
       answer: "Answer %{number}"
       score: "Score"
@@ -48,7 +48,7 @@ en:
 
   dashboard:
     show:
-      title: "Dashboard"
+      title: "Welcome"
       contents: "Manage contents"
       users: "Manage users"
 

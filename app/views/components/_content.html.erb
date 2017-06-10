@@ -1,12 +1,16 @@
 <div class="section content">
   <label><%= content.key %></label>
-  <span><%= content.text.html_safe %></span>
-  <% if content.category == "question" && content.next_id? %>
-    <% content.answers.each_with_index do | ans, index | %>
-      <% if ans.text? %>
-        <%= link_to ans, content_path(content.next_id, selected: index, answers: answers) %>
+  <div><%= content.text.html_safe %></div>
+  <% if content.answers.length.positive? && content.next_id %>
+    <div class="answers">
+      <% content.answers.each_with_index do | ans, index | %>
+        <% if ans.text? %>
+          <span>
+            <%= link_to ans, content_path(content.next_id, selected: index, answers: answers) %>
+          </span>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% elsif content.next_id %>
     <%= link_to t(".next"), content_path(content.next_id) %>
   <% else %>
