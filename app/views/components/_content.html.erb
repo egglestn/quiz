@@ -5,9 +5,9 @@
     <div class="answers">
       <% content.answers.each_with_index do | ans, index | %>
         <% if ans.text? %>
-          <span>
-            <%= link_to ans, content_path(content.next_id, selected: index, answers: answers) %>
-          </span>
+          <div class="answer-container">
+            <%= link_to ans, content_path(content.next_id, selected: index, answers: answers), class: "select-answer" %>
+          </div>
         <% end %>
       <% end %>
     </div>
