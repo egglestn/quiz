@@ -11,12 +11,6 @@ class ContentsController < ApplicationController
   def show
     @selected = params[:selected] || -1
 
-    puts "============"
-    puts params[:selected]
-    puts params[:answers]
-    puts @selected
-    puts "============"
-
     if params[:answers].present?
       @answers = params[:answers]
     else

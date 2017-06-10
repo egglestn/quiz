@@ -1,14 +1,14 @@
 <h2><%= @content.category.titleize %> #<%= @content.id %></h2>
 
-<% if @content.present? %>
-  <%= render "components/content", content: @content, answers: @answers_to_pass %>
+<% if @answers.present? %>
+  <%= render "answers", answers: @answers, selected: @selected %>
 <% end %>
 
-<% if @answers.present? %>
-  <%= render "answers", answers: @answers %>
+<% if @content.present? %>
+  <%= render "components/content", content: @content, answers: @answers_to_pass %>
 <% elsif @content.next.present? %>
   <div class="actions">
-    <%= link_to @content.next.key, content_path(@content.next) %>
+    <%= link_to @content.next, content_path(@content.next) %>
   </div>
 <% end %>
 

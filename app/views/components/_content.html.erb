@@ -1,7 +1,7 @@
 <div class="section content">
   <label><%= content.key %></label>
   <div><%= content.text.html_safe %></div>
-  <% if content.answers.length.positive? && content.next_id %>
+  <% if answers.present? && answers[0].length.positive? && content.next_id %>
     <div class="answers">
       <% content.answers.each_with_index do | ans, index | %>
         <% if ans.text? %>
@@ -12,7 +12,7 @@
       <% end %>
     </div>
   <% elsif content.next_id %>
-    <%= link_to t(".next"), content_path(content.next_id) %>
+    <%= link_to content.next, content_path(content.next_id) %>
   <% else %>
     <%= t(".end") %>
   <% end %>
