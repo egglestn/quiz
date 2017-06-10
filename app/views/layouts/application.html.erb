@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <%= render "components/header" %>
+    <%= render "components/header", section: @content.section.titleize %>
     <%= yield %>
   </body>
 </html>

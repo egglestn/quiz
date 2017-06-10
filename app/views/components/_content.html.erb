@@ -1,6 +1,6 @@
 <div class="section content">
-  <label><%= content.key %></label>
   <div><%= content.text.html_safe %></div>
+
   <% if answers.present? && answers[0].length.positive? && content.next_id %>
     <div class="answers">
       <% content.answers.each_with_index do | ans, index | %>
