@@ -6,6 +6,7 @@ class ContentsController < ApplicationController
   def index
     @questions = Content.where(category: Content.categories['question'])
     @explanations = Content.where(category: Content.categories['explanation'])
+    @content = @questions[0]
   end
 
   def show

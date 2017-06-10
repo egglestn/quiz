@@ -1,10 +1,12 @@
-<h2><%= t(".title") %></h2>
+<div class="container">
+  <h2><%= t(".title") %></h2>
 
-<% if current_user.admin? %>
-  <div class="actions">
-    <%= link_to t(".contents"), contents_path %>
-    <%= link_to t(".users"), users_path %>
-  </div>
-<% else %>
-  <%= render "components/content", content: @content, answers: @answers_to_pass %>
-<% end %>
+  <% if current_user.admin? %>
+    <div class="actions">
+      <%= link_to t(".contents"), contents_path %>
+      <%= link_to t(".users"), users_path %>
+    </div>
+  <% else %>
+    <%= render "components/content", content: @content, answers: @answers_to_pass %>
+  <% end %>
+</div>
