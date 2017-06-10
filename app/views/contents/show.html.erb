@@ -1,4 +1,4 @@
-<h2><%= @content.category.titleize %> #<%= @content.id %></h2>
+<h2><%= @content.key %></h2>
 
 <% if @answers.present? %>
   <%= render "answers", answers: @answers, selected: @selected %>
