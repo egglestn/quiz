@@ -15,9 +15,9 @@
       <h4><%= t(".contents") %></h4>
 
       <div class="col-sm-6">
-        <div class="category">
-          <%= label_tag :category %>
-          <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
+        <div class="key">
+          <%= label_tag :key %>
+          <%= f.text_field :key, placeholder: t(".key_placeholder") %>
         </div>
 
         <div class="follows">
@@ -32,9 +32,9 @@
           <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
         </div>
 
-        <div class="key">
-          <%= label_tag :key %>
-          <%= f.text_field :key, placeholder: t(".key_placeholder") %>
+        <div class="category">
+          <%= label_tag :category %>
+          <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
         </div>
       </div>
 

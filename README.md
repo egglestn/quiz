@@ -27,3 +27,4 @@ Done:
 * Ability to link back to dashboard / homepage from somewhere (!)
 * Run and fix rubocop and best practices
 * Ability to create next and have the links auto-fixed-up
+* Footnotes
