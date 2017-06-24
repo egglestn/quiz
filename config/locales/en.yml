@@ -29,6 +29,7 @@ en:
       option: "Next option"
       key_placeholder: "Key text"
       content_placeholder: "Question, answer or explanation text"
+      footnote_placeholder: "Optional explanation to go after the main text"
       answers: "Answers"
       contents: "Contents"
       save_and_next: "Save and create next"

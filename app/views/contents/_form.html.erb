@@ -14,28 +14,31 @@
     <div class="col-sm-8">
       <h4><%= t(".contents") %></h4>
 
-      <div class="category">
-        <%= label_tag :category %>
-        <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
+      <div class="col-sm-6">
+        <div class="category">
+          <%= label_tag :category %>
+          <%= f.select(:category, Content.categories.keys.map {|category| [category.titleize,category]}, class: "content-category") %>
+        </div>
+
+        <div class="follows">
+          <%= label_tag :next %>
+          <%= f.collection_select :next_id, others || [], :id, :key, include_blank: true %>
+        </div>
       </div>
 
-      <div class="follows">
-        <%= label_tag :next %>
-        <%= f.collection_select :next_id, others || [], :id, :key, include_blank: true %>
-      </div>
+      <div class="col-sm-6">
+        <div class="topic">
+          <%= label_tag :section %>
+          <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
+        </div>
 
-      <div class="topic">
-        <%= label_tag :section %>
-        <%= f.select(:section, Content.sections.keys.map {|section| [section.titleize,section]}) %>
-      </div>
-
-      <div class="key">
-        <%= label_tag :key %>
-        <%= f.text_field :key, placeholder: t(".key_placeholder") %>
+        <div class="key">
+          <%= label_tag :key %>
+          <%= f.text_field :key, placeholder: t(".key_placeholder") %>
+        </div>
       </div>
 
       <div class="text">
-        <!-- f.text_area :text, placeholder: t(".content_placeholder") -->
         <%= f.input :text, as: :ckeditor, placeholder: t(".content_placeholder"), input_html: { ckeditor: { toolbar: 'mini' } } %>
       </div>
     </div>
@@ -51,10 +54,17 @@
     <%= f.number_field :previous_id, value: previous_id, class: "hidden" %>
 
   </div>
-  <%= content_tag(:div, "", data: {contents: content.answers}, class: "data col-md-0") %>
+  <div class="content_details row">
+    <div class="col-sm-8">
+      <%= content_tag(:div, "", data: {contents: content.answers}, class: "data col-md-0") %>
+
+      <%= f.text_area :footnotes, placeholder: t(".footnote_placeholder"), class: "footnotes" %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit t("save") %>
     <%= f.submit t(".save_and_next") %>
   </div>
+
 <% end %>
