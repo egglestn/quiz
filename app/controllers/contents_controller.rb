@@ -1,6 +1,6 @@
 # Controller for primary contents
 class ContentsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -85,6 +85,7 @@ class ContentsController < ApplicationController
       :section, :next_id,
       :category, :answers,
       :create_next, :previous_id,
+      :footnotes,
       answers_attributes: [:id, :key, :text, :score]
     )
   end
