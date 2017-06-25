@@ -1,7 +1,7 @@
 <div class="content">
   <div><%= content.text.html_safe %></div>
 
-  <% if options.present? && options[0].length.positive? && content.next_id %>
+  <% if options && options[0].length.positive? && content.next_id %>
     <div class="options">
       <% options.each_with_index do | option, index | %>
         <% if option.length.positive? %>

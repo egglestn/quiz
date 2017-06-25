@@ -7,6 +7,6 @@
       <%= link_to t(".users"), users_path %>
     </div>
   <% else %>
-    <%= render "components/content", content: @content, answers: @answers_to_pass %>
+    <%= render "components/content", content: @content, options: @options %>
   <% end %>
 </div>
