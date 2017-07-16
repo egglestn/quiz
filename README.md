@@ -9,6 +9,9 @@ TODO:
 * Fix deprecated warnings
 * Do something about DB content backup
 * Make sure you can't select current question as previous / next
+* Better user management
+* Remove foo users
+* Make codeship builds report success sometimes
 
 Done:
 * i18n translation infrastructure

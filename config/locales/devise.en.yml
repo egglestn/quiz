@@ -42,10 +42,21 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      new:
+        register: "Sign up"
+        why_q: "Why do we need your email address?"
+        why_a: "So that we can keep track of your score, and send you a password reminder. We promise not to spam you. Feel free to use a fake address
+        if you know it's unique and promise to remember the password."
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        welcome: "Welcome to world without maths"
+        intro: "This is a safe space where you can do some thinking about why humans built mathematical logic and invented maths terminology."
+        intro2: "There are questions, but no wrong answers. Your opinion matters."
+        intro3: "If you think this sounds like fun, please "
+        before: "If you've been here before, log in"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
