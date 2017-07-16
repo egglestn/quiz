@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container with-background">
   <h3><%= @content.key %></h3>
 
+  <img src="<%= @content.background_link %>" >
   <% if @selected.to_i >= 0 %>
     <%= render "answers", selected: @selected, answers: @previous.answers %>
   <% end %>
@@ -12,10 +13,11 @@
       <%= link_to @content.next, content_path(@content.next) %>
     </div>
   <% end %>
-
-  <% if current_user.admin? %>
-    <div class="actions">
-      <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
-    </div>
-  <% end %>
 </div>
+
+<% if current_user.admin? %>
+  <div class="actions no-container">
+    <%= link_to t("edit"), edit_content_path(@content), class: "left" %>
+  </div>
+<% end %>
+

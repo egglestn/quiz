@@ -41,6 +41,10 @@
       <div class="text">
         <%= f.input :text, as: :ckeditor, placeholder: t(".content_placeholder"), input_html: { ckeditor: { toolbar: 'mini' } } %>
       </div>
+
+      <div class="background">
+        <%= f.input :background_link, placeholder: t(".background_placeholder") %>
+      </div>
     </div>
     <div class="col-sm-4">
       <div class="answers <%= content.category == "explanation" ? "hidden" : "" %>">

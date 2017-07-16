@@ -33,6 +33,7 @@ en:
       answers: "Answers"
       contents: "Contents"
       save_and_next: "Save and create next"
+      background_placeholder: "For example https://cdn.pixabay.com/get/image.jpg"
     new:
       title: "New content"
     answers:

@@ -31,3 +31,5 @@ Done:
 * Run and fix rubocop and best practices
 * Ability to create next and have the links auto-fixed-up
 * Footnotes
+* Welcome page and sign up page
+* Background image configuration

@@ -85,7 +85,7 @@ class ContentsController < ApplicationController
       :section, :next_id,
       :category, :answers,
       :create_next, :previous_id,
-      :footnotes,
+      :footnotes, :background_link,
       answers_attributes: [:id, :key, :text, :score]
     )
   end

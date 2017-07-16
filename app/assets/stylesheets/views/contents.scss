@@ -53,3 +53,24 @@
   margin-left: 20px;
   margin-bottom: 30px;
 }
+
+.background {
+  input {
+    width: 100%;
+  }
+}
+
+.with-background {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+  }
+}
+

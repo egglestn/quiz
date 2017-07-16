@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624084747) do
+ActiveRecord::Schema.define(version: 20170716145549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 20170624084747) do
     t.string   "key"
     t.integer  "section"
     t.integer  "content_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "category"
     t.integer  "next_id"
     t.string   "footnotes"
+    t.string   "background_link"
     t.index ["content_id"], name: "index_contents_on_content_id", using: :btree
     t.index ["next_id"], name: "index_contents_on_next_id", using: :btree
   end
